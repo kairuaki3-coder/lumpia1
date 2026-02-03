@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Answer Carefully 😄</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f9f9f9;
+      padding: 20px;
+    }
+
+    img {
+      display: block;
+      margin: 0 auto;
+      width: 300px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 18px;
+      padding: 12px 25px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+    }
+
+    #yesBtn {
+      background-color: #4CAF50;
+      color: white;
+      transition: transform 0.3s ease;
+    }
+
+    #noBtn {
+      background-color: #f44336;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Centered GIF -->
+  <img src="dadas.gif" alt="">
+
+  <!-- Question text -->
+  <h1 id="question">ano na send kona? 💖</h1>
+
+  <!-- Buttons -->
+  <button id="yesBtn" onclick="yesClicked()">Yes</button>
+  <button id="noBtn" onclick="noClicked()">No</button>
+
+  <script>
+    let noCount = 0;
+
+    const messages = [
+      "Are you sure? 🤔",
+      "Really sure?? 😳",
+      "Come on, think again 🥺",
+      "Last chance! 😭",
+      "Okay now you’re just playing 😅"
+    ];
+
+    function noClicked() {
+      noCount++;
+
+      const question = document.getElementById("question");
+      question.textContent =
+        messages[Math.min(noCount - 1, messages.length - 1)];
+
+      const yesBtn = document.getElementById("yesBtn");
+      yesBtn.style.transform = `scale(${1 + noCount * 0.3})`;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = "<h1>send me your address so i can send the item thx!!! 💕🎉</h1>";
+    }
+  </script>
+
+</body>
+</html>
